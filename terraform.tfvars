@@ -1,0 +1,6 @@
+project_name     = "Swiggy-app"
+project_env      = "Prod"
+hosted_zone_name = "glearns.online"
+hostname         = "Swiggyapp"
+project_own      = "Gopika"
+hosted_zone_id   = "Z0310337WL1FVNUILYGU"
