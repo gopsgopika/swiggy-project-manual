@@ -54,7 +54,7 @@ jobs:
       - name: Terraform plan
         run: |
           terraform plan \
-          -var "instance_type=${{github.event.inputs.instance_type"
+          -var "instance_type=${{github.event.inputs.instance_type}}"
           -var "ami_id=${{github.event.inputs.ami_id}}"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_KEY_ID }}
@@ -66,7 +66,7 @@ jobs:
         run : |
               terraform apply \
               -auto-approve \
-              -var "instance_type=${{github.event.inputs.instance_type"
+              -var "instance_type=${{github.event.inputs.instance_type}}"
               -var "ami_id=${{github.event.inputs.ami_id}}"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_KEY_ID }}
