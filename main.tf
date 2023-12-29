@@ -3,7 +3,7 @@ resource "aws_instance" "shopping_app" {
 
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = aws_key_pair.app_key.key_name
+  key_name               = aws_key_pair.sw_key.key_name
   vpc_security_group_ids = [aws_security_group.http_access.id]
   tags = {
     Name    = "${var.project_name}-${var.project_env}-frontend"
@@ -18,9 +18,9 @@ resource "aws_instance" "shopping_app" {
 
 ## Resource KEYPAIR ##
 
-resource "aws_key_pair" "app_key" {
+resource "aws_key_pair" "sw_key" {
   key_name   = "${var.project_name}-${var.project_env}"
-  public_key = file("appkey.pub")
+  public_key = file("swkey.pub")
   tags = {
     Name    = "${var.project_name}-${var.project_env}"
     project = var.project_name
